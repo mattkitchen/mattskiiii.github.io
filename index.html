@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <title>Document</title>
+        <style>
+            /* Add some basic styles */
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin-top: 50px;
+            }
+    
+            h1 {
+                cursor: pointer;
+            }
+    
+            .dropdown {
+                display: none;
+                margin-top: 20px;
+            }
+    
+            .dropdown ul {
+                list-style: none;
+                padding: 0;
+            }
+    
+            .dropdown ul li {
+                background: #f0f0f0;
+                padding: 10px;
+                margin: 5px 0;
+                cursor: pointer;
+            }
+    
+            .dropdown ul li:hover {
+                background: #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="header">Matthew Kitchen</h1>
+        <div class="dropdown" id="dropdown">
+            <ul>
+                <li>Archive</li>
+                <li>Contact</li>
+                <li>About</li>
+            </ul>
+        </div>
+    
+        <script>
+            const header = document.getElementById('header');
+            const dropdown = document.getElementById('dropdown');
+    
+            // Array of fonts to cycle through
+            const fonts = ['Arial', 'Courier New', 'Georgia', 'Times New Roman', 'Verdana', 'Comic Sans MS'];
+            let fontIndex = 0;
+            let interval;
+    
+            // Function to change the font
+            function changeFont() {
+                header.style.fontFamily = fonts[fontIndex];
+                fontIndex = (fontIndex + 1) % fonts.length;
+            }
+    
+            // Start changing fonts every 0.5 seconds
+            interval = setInterval(changeFont, 500);
+    
+            // Stop changing fonts and show dropdown on click
+            header.addEventListener('click', () => {
+                clearInterval(interval);
+                dropdown.style.display = 'block';
+            });
+        </script>
+    </body>
+    </html>
+</body>
+</html>
